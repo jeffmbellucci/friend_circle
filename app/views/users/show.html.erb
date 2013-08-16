@@ -1,0 +1,9 @@
+<%= @user.username %> welcome!
+<br>
+<br>
+<%@user.posts.each do |post| %>
+<%=post.title%>
+<br>
+<%=post.body%>
+<br>
+<%end%>

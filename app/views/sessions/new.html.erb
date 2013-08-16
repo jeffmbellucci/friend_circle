@@ -1,0 +1,13 @@
+<h2> Sign in for Friends </h2>
+
+<%= form_for(:session, url: session_url) do |f| %>
+<%= f.text_field :username %>
+<%= f.label :username %>
+<br>
+<%= f.password_field :password %>
+<%=f.label :password, "Enter password"%>
+<br>
+<%=f.submit "SUBMIT TO ME!"%>
+<% end %>
+
+<%= link_to "Sign up for Friends", new_user_url %>

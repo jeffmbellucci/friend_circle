@@ -1,0 +1,28 @@
+<h2> Create a Post </h2>
+
+<form action= "<%=posts_url%>" method = "post">
+  <input type= "text" name="post[title]" id="title_table" value="<%=@post.title%>">
+  <label for="title_table"> Post title </label>
+  <br>
+  <input type= "text" name="post[body]" id="body_table"
+  value="<%=@post.body%>">
+
+  <label for="body_table"> Post content </label>
+  <br>
+  <input type= "hidden" name = "authenticity_token"
+  value= "<%= form_authenticity_token%>" >
+  <% @circles.each do |circle| %>
+  <label for="item<%=circle.id%>"><%= circle.title %></label>
+  <input type="checkbox" name="post[circle_ids][]"
+  value ="<%=circle.id%>" id="item<%=circle.id%>">
+  <br>
+  <% end %>
+  <p> Choose circles who can see your post </p>
+  <h2>Add up to 3 links</h2>
+  <% 3.times do |number| %>
+  <input type="text" name="post[links_attributes][<%= number %>][link]">
+  <% end %>
+
+  <input type= "submit", "POST!!!">
+</form>
+
